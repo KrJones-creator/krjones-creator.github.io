@@ -4,53 +4,33 @@
     <meta charset="UTF-8">
     <title>Home-Workout Guide</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- SEO-Grundlagen -->
-    <meta name="description" content="Die besten Home-Workout Produktempfehlungen mit Affiliate-Links.">
+    <meta name="description" content="Die besten Home-Workout Produktempfehlungen mit ehrlichen Erfahrungsberichten und Affiliate-Links.">
 
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Abstand, damit Überschriften nicht vom Header verdeckt werden */
-        section {
-            scroll-margin-top: 100px;
-        }
+        html { scroll-behavior: smooth; }
+        section { scroll-margin-top: 120px; } /* Mehr Abstand beim Scrollen */
 
         :root {
             --primary: #2563eb;
             --primary-dark: #1d4ed8;
-            --bg: #f3f4f6;
+            --bg: #f9fafb;
             --text: #111827;
             --muted: #6b7280;
             --card-bg: #ffffff;
             --border: #e5e7eb;
-        }
-
-        * {
-            box-sizing: border-box;
+            --shadow: rgba(0,0,0,0.05);
         }
 
         body {
             margin: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-family: 'Inter', system-ui, sans-serif;
             background: var(--bg);
             color: var(--text);
-            line-height: 1.5;
-        }
-
-        a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
+            line-height: 1.6;
         }
 
         header {
-            background: #ffffff;
+            background: #fff;
             border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
@@ -63,268 +43,208 @@
             padding: 0 1.5rem;
         }
 
+        /* Navigation */
         .nav {
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
             padding: 1rem 0;
         }
 
-        .logo {
-            font-weight: 700;
-            font-size: 1.25rem;
+        .logo { 
+            font-weight: 700; 
+            font-size: 1.5rem; 
+            color: var(--primary); 
         }
 
         .nav-links {
             display: flex;
-            gap: 1.5rem;
-            font-size: 0.95rem;
+            gap: 2.5rem; /* Abstand zwischen Links */
         }
 
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--primary-dark); }
+
+        @media (max-width: 640px) {
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+                margin-top: 0.5rem;
+            }
+        }
+
+        /* Hero */
         .hero {
-            padding: 3rem 0 2rem;
+            padding: 5rem 0 4rem;
             text-align: center;
         }
 
         .hero h1 {
-            font-size: clamp(2rem, 3vw, 2.5rem);
-            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
         }
 
         .hero p {
+            font-size: 1.125rem;
+            margin-bottom: 2.5rem; /* mehr Abstand zum Button */
             color: var(--muted);
-            max-width: 600px;
-            margin: 0.5rem auto 1.5rem;
         }
 
         .btn-primary {
-            display: inline-block;
             background: var(--primary);
-            color: #ffffff;
-            padding: 0.75rem 1.5rem;
+            color: #fff;
+            padding: 0.75rem 1.75rem;
             border-radius: 999px;
-            font-weight: 600;
-            font-size: 0.95rem;
             border: none;
             cursor: pointer;
-            margin-bottom: 2rem; /* Abstand zum blauen Kasten */
+            font-weight: 600;
+            transition: background 0.2s;
         }
 
-        .btn-primary:hover {
-            background: var(--primary-dark);
-        }
+        .btn-primary:hover { background: var(--primary-dark); }
 
         .disclaimer {
-            font-size: 0.85rem;
-            color: var(--muted);
             background: #e5f0ff;
             border-left: 4px solid var(--primary);
-            padding: 0.75rem 1rem;
-            border-radius: 0.25rem;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            text-align: left;
+            padding: 1rem 1.25rem;
+            max-width: 650px;
+            margin: 2rem auto 0;
+            font-size: 0.875rem;
+            color: var(--muted);
+            border-radius: 0.5rem;
         }
 
-        .product-section {
-            padding: 1rem 0 3rem;
-        }
-
+        /* Section Header */
         .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 1.5rem;
-            gap: 1rem;
+            margin-bottom: 3rem; /* mehr Abstand zu den Produkten */
+            text-align: center;
         }
 
         .section-header h2 {
-            margin: 0;
-            font-size: 1.4rem;
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
         }
 
-        .section-header p {
-            margin: 0;
-            font-size: 0.9rem;
-            color: var(--muted);
-        }
+        .section-header p { color: var(--muted); }
 
+        /* Products */
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem; /* mehr Abstand zwischen Karten */
         }
 
         .product-card {
             background: var(--card-bg);
-            border-radius: 0.75rem;
             border: 1px solid var(--border);
-            padding: 1rem;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
             display: flex;
             flex-direction: column;
-            height: 100%;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 6px var(--shadow);
         }
 
-        .product-image {
+        .product-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px var(--shadow);
+        }
+
+        .product-image img {
             width: 100%;
-            height: 180px;
-            background: #e5e7eb;
+            max-height: 180px;
+            object-fit: contain;
             border-radius: 0.5rem;
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--muted);
-            font-size: 0.85rem;
+            margin-bottom: 1rem;
         }
 
         .product-badge {
-            display: inline-block;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            padding: 0.25rem 0.5rem;
-            border-radius: 999px;
             background: #ecfdf5;
             color: #047857;
+            padding: 0.3rem 0.6rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
             margin-bottom: 0.5rem;
-        }
-
-        .product-title {
+            display: inline-block;
             font-weight: 600;
-            margin-bottom: 0.25rem;
-            font-size: 1rem;
         }
 
-        .product-brand {
-            font-size: 0.85rem;
-            color: var(--muted);
-            margin-bottom: 0.75rem;
-        }
+        .product-title { font-weight: 600; margin-bottom: 0.25rem; font-size: 1rem; }
+        .product-brand { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+        .product-description { font-size: 0.9rem; color: var(--muted); margin-bottom: 1rem; flex: 1; }
 
-        .product-rating {
-            font-size: 0.85rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .stars {
-            color: #f59e0b;
-            margin-right: 0.25rem;
-        }
-
-        .product-description {
-            font-size: 0.9rem;
-            color: var(--muted);
-            margin-bottom: 0.75rem;
-        }
+        .product-rating { font-size: 0.85rem; margin-bottom: 0.5rem; }
+        .stars { color: #f59e0b; }
 
         .product-meta {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 0.75rem;
-        }
-
-        .price {
-            font-weight: 700;
-            font-size: 1.05rem;
-        }
-
-        .note {
-            font-size: 0.75rem;
-            color: var(--muted);
-        }
-
-        .card-footer {
-            margin-top: auto;
-            display: flex;
-            justify-content: space-between;
-            gap: 0.75rem;
             align-items: center;
-            flex-wrap: wrap;
+            margin-bottom: 1rem;
         }
+
+        .price { font-weight: 700; font-size: 1rem; }
+        .note { font-size: 0.75rem; color: var(--muted); }
 
         .btn-link {
-            flex: 1;
-            text-align: center;
-            padding: 0.5rem 0.75rem;
-            border-radius: 999px;
-            font-size: 0.85rem;
-            font-weight: 600;
+            background: #eff6ff;
             border: 1px solid var(--primary);
             color: var(--primary);
-            background: #eff6ff;
+            padding: 0.5rem;
+            border-radius: 999px;
+            text-align: center;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: background 0.2s, color 0.2s;
         }
 
         .btn-link:hover {
-            background: #dbeafe;
+            background: var(--primary);
+            color: #fff;
         }
 
-        .small-link {
-            font-size: 0.75rem;
-            color: var(--muted);
-            text-decoration: underline;
-        }
-
+        /* FAQ */
         .faq {
-            padding: 2rem 0 3rem;
-            border-top: 1px solid var(--border);
+            padding: 4rem 0;
+        }
+
+        .faq h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
         }
 
         .faq-item {
-            margin-bottom: 1.25rem;
+            margin-bottom: 2rem;
         }
 
         .faq-item h3 {
-            font-size: 1rem;
-            margin-bottom: 0.25rem;
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
         }
 
-        .faq-item p {
-            font-size: 0.9rem;
-            color: var(--muted);
-            margin: 0;
-        }
-
+        /* Footer */
         footer {
             border-top: 1px solid var(--border);
-            padding: 1.5rem 0 2rem;
-            font-size: 0.8rem;
+            padding: 1.5rem 0;
+            font-size: 0.85rem;
             color: var(--muted);
-            background: #ffffff;
-        }
-
-        footer a {
-            color: var(--muted);
-        }
-
-        footer a:hover {
-            color: var(--primary);
-        }
-
-        .footer-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 0.75rem;
+            background: #fff;
+            text-align: center;
         }
 
         @media (max-width: 640px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero {
-                padding-top: 2rem;
-            }
-
-            .section-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+            .hero h1 { font-size: 2rem; }
         }
     </style>
 </head>
+
 <body>
 
 <header>
@@ -332,8 +252,9 @@
         <nav class="nav">
             <div class="logo">Home-Workout Guide</div>
             <div class="nav-links">
-                <a href="#top-produkte">Top-Produkte</a>
-                <a href="#kategorien">Kategorien</a>
+                <a href="#kurzhanteln">Kurzhanteln & Langhanteln</a>
+                <a href="#klimmzug">Klimmzugstangen</a>
+                <a href="#liegestuetz">Liegestützgriffe</a>
                 <a href="#faq">FAQ</a>
             </div>
         </nav>
@@ -341,147 +262,264 @@
 </header>
 
 <main>
+
+    <!-- Hero -->
     <section class="hero">
         <div class="container">
             <h1>Die besten Home-Workout Empfehlungen</h1>
-            <p>
-                Hier findest du sorgfältig ausgewählte Fitness-Produkte für dein Training zu Hause.
-                Wenn du über meine Links kaufst, unterstützt du meine Arbeit – ohne Mehrkosten für dich.
-            </p>
+            <p>Finde hochwertige Fitnessprodukte für dein Training zu Hause – handverlesen und transparent empfohlen.</p>
 
-            <button class="btn-primary" onclick="document.getElementById('top-produkte').scrollIntoView({behavior: 'smooth'});">
+            <button class="btn-primary" onclick="document.getElementById('kurzhanteln').scrollIntoView({behavior: 'smooth'});">
                 Zu den Empfehlungen
             </button>
 
             <div class="disclaimer">
-                Hinweis: Diese Seite enthält Affiliate-Links. Wenn du über diese Links einkaufst, erhalte ich eine Provision.
-                Für dich entstehen dabei keine zusätzlichen Kosten.
+                Hinweis: Diese Seite enthält Affiliate-Links. Wenn du über diese Links einkaufst, erhalte ich eine kleine Provision – für dich entstehen keine Mehrkosten.
             </div>
         </div>
     </section>
 
-    <section class="product-section" id="top-produkte">
+    <!-- Kategorie 1 -->
+    <section class="product-section" id="kurzhanteln">
         <div class="container">
             <div class="section-header">
-                <div>
-                    <h2>Top-Empfehlungen</h2>
-                    <p>Die besten Home-Workout Produkte im Überblick.</p>
-                </div>
-                <p>Zuletzt aktualisiert: <strong>Dezember 2025</strong></p>
+                <h2>Kurzhanteln & Langhanteln</h2>
+                <p>Perfekt für Krafttraining zu Hause</p>
             </div>
 
             <div class="product-grid">
                 <article class="product-card">
-                    <div class="product-badge">Top-Empfehlung</div>
-                    <div class="product-image">Produktbild hier einfügen</div>
-                    <h3 class="product-title">Produktname 1</h3>
-                    <div class="product-brand">Marke – Kategorie</div>
+                    <div class="product-badge">Preis-Leistung</div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/7136IT8ZZsL._AC_SL1500_.jpg" alt="CCLIFE Hantelset 20 kg">
+                    </div>
+                    <h3 class="product-title">CCLIFE Hantelset 20 kg – Kurzhanteln & Langhantel</h3>
+                    <div class="product-brand">CCLIFE – Home-Workout Equipment</div>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span>4,3 von 5 Sternen (11.502 Bewertungen)</span>
+                    </div>
+                    <p class="product-description">
+                        Flexibles Hantelset mit 2 Kurzhanteln und Verbindungsrohr zur Nutzung als Langhantel. Ideal für Einsteiger und Fortgeschrittene.
+                    </p>
+                    <div class="product-meta">
+                        <div class="price">33,26 €*</div>
+                        <div class="note">*UVP: 42,95 € – Preis kann variieren</div>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn-link" href="https://amzn.to/4pTObv7" target="_blank" rel="nofollow sponsored noopener">
+                            Zum Angebot
+                        </a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-badge">Bestseller</div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/71anTnD18XL._AC_SL1500_.jpg" alt="SONGMICS Neopren Kurzhanteln 2 x 5 kg">
+                    </div>
+                    <h3 class="product-title">SONGMICS Hexagon Kurzhanteln 2 × 5 kg – Neopren</h3>
+                    <div class="product-brand">SONGMICS – Home & Fitness Equipment</div>
                     <div class="product-rating">
                         <span class="stars">★★★★★</span>
-                        <span>4,8 von 5 Sternen</span>
+                        <span>4,7 von 5 Sternen (8.800 Bewertungen)</span>
                     </div>
                     <p class="product-description">
-                        Kurze Beschreibung des Produkts und warum es ideal für Home-Workouts ist.
+                        Hochwertige Hexagon-Kurzhanteln aus Gusseisen mit rutschfestem Neoprenüberzug. 
+                        Ideal für Krafttraining, Functional Fitness und Home-Workouts. Die sechseckige Form verhindert Wegrollen.
                     </p>
                     <div class="product-meta">
-                        <div class="price">ca. 79,99 €*</div>
-                        <div class="note">*Preis kann variieren</div>
+                        <div class="price">30,99 €*</div>
+                        <div class="note">*UVP: 32,99 € – Preis kann variieren</div>
                     </div>
                     <div class="card-footer">
-                        <a class="btn-link" href="#" target="_blank" rel="nofollow sponsored noopener">Zum Angebot</a>
-                        <a class="small-link" href="#faq">Mehr Infos</a>
+                        <a class="btn-link" href="https://amzn.to/4si2NGg" target="_blank" rel="nofollow sponsored noopener">
+                            Zum Angebot
+                        </a>
                     </div>
                 </article>
-
-                <article class="product-card">
-                    <div class="product-badge">Preis-Leistung</div>
-                    <div class="product-image">Produktbild hier einfügen</div>
-                    <h3 class="product-title">Produktname 2</h3>
-                    <div class="product-brand">Marke – Kategorie</div>
-                    <div class="product-rating">
-                        <span class="stars">★★★★☆</span>
-                        <span>4,4 von 5 Sternen</span>
-                    </div>
-                    <p class="product-description">
-                        Warum dieses Produkt ein gutes Preis-Leistungs-Verhältnis bietet.
-                    </p>
-                    <div class="product-meta">
-                        <div class="price">ca. 49,90 €*</div>
-                        <div class="note">*Preis kann variieren</div>
-                    </div>
-                    <div class="card-footer">
-                        <a class="btn-link" href="#" target="_blank" rel="nofollow sponsored noopener">Zum Angebot</a>
-                        <span class="small-link">Transparente Empfehlung</span>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-badge">Alternative</div>
-                    <div class="product-image">Produktbild hier einfügen</div>
-                    <h3 class="product-title">Produktname 3</h3>
-                    <div class="product-brand">Marke – Kategorie</div>
-                    <div class="product-rating">
-                        <span class="stars">★★★★☆</span>
-                        <span>4,2 von 5 Sternen</span>
-                    </div>
-                    <p class="product-description">
-                        Eine gute Alternative für andere Trainingsstile oder Budgets.
-                    </p>
-                    <div class="product-meta">
-                        <div class="price">ca. 99,00 €*</div>
-                        <div class="note">*Preis kann variieren</div>
-                    </div>
-                    <div class="card-footer">
-                        <a class="btn-link" href="#" target="_blank" rel="nofollow sponsored noopener">Zum Angebot</a>
-                        <a class="small-link" href="#faq">Wie ich auswähle</a>
-                    </div>
-                </article>
+                
             </div>
         </div>
     </section>
 
-    <section class="product-section" id="kategorien">
+   
+     <!-- Kategorie 2 -->
+     <section class="product-section" id="klimmzug">
         <div class="container">
             <div class="section-header">
-                <div>
-                    <h2>Kategorien</h2>
-                    <p>Finde Produkte passend zu deinem Trainingsstil.</p>
-                </div>
+                <h2>Klimmzugstangen</h2>
+                <p>Für Rücken-, Arm- und Core-Training – stabil & platzsparend.</p>
             </div>
-            <p style="color: #6b7280; font-size: 0.9rem;">
-                Beispiel: Hanteln, Widerstandsbänder, Yogamatten, Klimmzugstangen, Fitnessgeräte …
-            </p>
+
+            <div class="product-grid">
+
+                <article class="product-card">
+                    <div class="product-badge">Bestseller</div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/61OIhhTOueL._AC_SL1500_.jpg" alt="Sportstech Pullmate Klimmzugstange Türrahmen">
+                    </div>
+                    <h3 class="product-title">Sportstech Pullmate Klimmzugstange – Türrahmen</h3>
+                    <div class="product-brand">Sportstech – Fitness & Calisthenics</div>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span>4,5 von 5 Sternen (1.510 Bewertungen)</span>
+                    </div>
+                    <p class="product-description">
+                        Hochwertige Klimmzugstange zur Türrahmenmontage ohne Schrauben.
+                        Belastbar bis 200 kg, rutschfeste Griffe, mehrere Griffvarianten
+                        sowie Klimmzughilfe und Schlingentrainer für vielseitiges Training.
+                    </p>
+                    <div class="product-meta">
+                        <div class="price">42,00 €*</div>
+                        <div class="note">*UVP: 49,99 € – Preis kann variieren</div>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn-link" href="https://amzn.to/4jelUNk" target="_blank" rel="nofollow sponsored noopener">
+                            Zum Angebot
+                        </a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-badge">Top bewertet</div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/81NMcTj4aAL._AC_SL1500_.jpg" alt="BeMaxx Klimmzugstange Türrahmen">
+                    </div>
+                    <h3 class="product-title">BeMaxx Klimmzugstange – Türrahmen ohne Bohren</h3>
+                    <div class="product-brand">BeMaxx – Profi Home-Fitness</div>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span>4,3 von 5 Sternen (2.455 Bewertungen)</span>
+                    </div>
+                    <p class="product-description">
+                        Extrem stabile Klimmzugstange aus massivem Stahl für den Türrahmen.
+                        Kein Bohren oder Schrauben nötig, belastbar bis 200 kg.
+                        Inklusive Trainings-eBook für effektives Calisthenics-Training zu Hause.
+                    </p>
+                    <div class="product-meta">
+                        <div class="price">34,99 €*</div>
+                        <div class="note">*UVP: 47,99 € – Preis kann variieren</div>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn-link" href="https://amzn.to/49rCNk8" target="_blank" rel="nofollow sponsored noopener">
+                            Zum Angebot
+                        </a>
+                    </div>
+                </article>
+
+            </div>
         </div>
     </section>
 
+    <!-- Kategorie 3 -->
+    <section class="product-section" id="liegestuetz">
+        <div class="container">
+            <div class="section-header">
+                <h2>Liegestützgriffe</h2>
+                <p>Für saubere, gelenkschonende Push-Ups – ergonomisch und rutschfest.</p>
+            </div>
+    
+            <div class="product-grid">
+    
+                <!-- ALPHASKIN Liegestützbrett -->
+                <article class="product-card">
+                    <div class="product-badge">Top bewertet</div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/716m8pwBWgL._AC_SL1500_.jpg" alt="ALPHASKIN Premium Liegestützbrett Set">
+                    </div>
+                    <h3 class="product-title">ALPHASKIN Premium Liegestützbrett – 9 in 1 Push-Up Board</h3>
+                    <div class="product-brand">ALPHASKIN – Homegym & Fitnessgeräte</div>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span>4,5 von 5 Sternen (728 Bewertungen)</span>
+                    </div>
+                    <p class="product-description">
+                        Vielseitiges Liegestützbrett mit über 9 Übungsvarianten zur gezielten
+                        Stärkung von Brust, Schultern, Rücken, Armen und Core.
+                        Ergonomisch, rutschfest und platzsparend klappbar – ideal für Home-Workouts.
+                    </p>
+                    <div class="product-meta">
+                        <div class="price">26,95 €*</div>
+                        <div class="note">*UVP: 27,95 € – Preis kann variieren</div>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn-link" href="https://amzn.to/4qi2hGc" target="_blank" rel="nofollow sponsored noopener">
+                            Zum Angebot
+                        </a>
+                    </div>
+                </article>
+    
+                <!-- Readaeer Push-Up Bars -->
+                <article class="product-card">
+                    <div class="product-badge">Bestseller</div>
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/7132qKVyD-L._AC_SL1500_.jpg" alt="Readaeer Liegestützgriffe Push-Up Bars">
+                    </div>
+                    <h3 class="product-title">Readaeer Liegestützgriffe – Push-Up Bars</h3>
+                    <div class="product-brand">Readaeer – Fitness Zubehör</div>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span>4,5 von 5 Sternen (6.108 Bewertungen)</span>
+                    </div>
+                    <p class="product-description">
+                        Klassische Push-Up Bars für gelenkschonende Liegestütze.
+                        Leicht, stabil und rutschfest – ideal für Anfänger und Fortgeschrittene.
+                        Perfekt für effektives Arm-, Brust- und Trizeps-Training zu Hause.
+                    </p>
+                    <div class="product-meta">
+                        <div class="price">9,99 €*</div>
+                        <div class="note">*Preis kann variieren</div>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn-link" href="https://amzn.to/3MTCYfp" target="_blank" rel="nofollow sponsored noopener">
+                            Zum Angebot
+                        </a>
+                    </div>
+                </article>
+    
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- FAQ -->
     <section class="faq" id="faq">
         <div class="container">
             <h2>Häufige Fragen (FAQ)</h2>
 
             <div class="faq-item">
                 <h3>Verdienst du Geld mit den Links?</h3>
-                <p>Ja, über Affiliate-Links erhalte ich eine Provision – ohne Mehrkosten für dich.</p>
+                <p>Ja, wenn du über meine Affiliate‑Links einkaufst, erhalte ich eine kleine Provision. Für dich bleibt der Preis identisch. So kann ich die Website weiter betreiben und dir nützliche Empfehlungen geben.</p>
             </div>
 
             <div class="faq-item">
                 <h3>Wie wählst du die Produkte aus?</h3>
-                <p>Ich empfehle nur Produkte, die ich sinnvoll finde oder selbst nutzen würde.</p>
+                <p>Ich empfehle nur Produkte, die ich selbst getestet habe oder von denen ich überzeugt bin. Gute Bewertungen, solide Verarbeitung und ein faires Preis-Leistungs-Verhältnis sind mir wichtig.</p>
             </div>
 
             <div class="faq-item">
-                <h3>Ändern sich Preise?</h3>
-                <p>Ja, Preise und Verfügbarkeiten können sich jederzeit ändern. Bitte prüfe sie beim Anbieter.</p>
+                <h3>Brauche ich teure Geräte für ein gutes Home‑Workout?</h3>
+                <p>Nein. Schon einfache Tools wie Kurzhanteln, Widerstandsbänder oder Liegestützgriffe reichen aus, um effektiv Muskeln aufzubauen und fitter zu werden.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Wie oft sollte ich zu Hause trainieren?</h3>
+                <p>Für sichtbare Fortschritte reichen 2–4 Trainingseinheiten pro Woche. Wichtig ist, dass du regelmäßig trainierst und die Übungen sauber ausführst.</p>
             </div>
         </div>
     </section>
+
 </main>
 
 <footer>
     <div class="container">
-        <div>
-            © <span id="year"></span> Home-Workout Guide – Alle Rechte vorbehalten.
-        </div>
-        <div class="footer-links">
-            <a href="#">Impressum</a>
-            <a href="#">Datenschutzerklärung</a>
-            <a href="#faq">Affiliate-Hin
+        © <span id="year"></span> Home-Workout Guide – Alle Rechte vorbehalten.
+    </div>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</footer>
+
+</body>
+</html>
