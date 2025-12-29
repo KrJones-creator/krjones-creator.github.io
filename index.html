@@ -1,3 +1,591 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Home-Workout Guide – Kurzhanteln, Klimmzugstangen & Liegestützgriffe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Die besten Home-Workout Produkte: Kurzhanteln, Klimmzugstangen & Liegestützgriffe für dein Training zu Hause. Ehrliche Reviews und Tipps.">
+    <meta name="robots" content="index,follow">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="Home-Workout Guide – Die besten Produkte für dein Training">
+    <meta property="og:description" content="Finde hochwertige Hanteln, Klimmzugstangen & Liegestützgriffe für Home-Workouts. Ehrliche Reviews und Produktempfehlungen.">
+    <meta property="og:image" content="https://m.media-amazon.com/images/I/7136IT8ZZsL._AC_SL1500_.jpg">
+    <meta property="og:url" content="https://deine-website.de">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <style>
+        html { scroll-behavior: smooth; }
+        section { scroll-margin-top: 120px; }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --bg: #f9fafb;
+            --text: #111827;
+            --muted: #6b7280;
+            --card-bg: #ffffff;
+            --border: #e5e7eb;
+            --shadow: rgba(0,0,0,0.05);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo { 
+            font-weight: 700; 
+            font-size: 1.5rem; 
+            color: var(--primary); 
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--primary-dark); }
+
+        @media (max-width: 640px) {
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+                margin-top: 0.5rem;
+            }
+        }
+
+        /* Hero */
+        .hero {
+            padding: 5rem 0 4rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            margin-bottom: 2.5rem;
+            color: var(--muted);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #fff;
+            padding: 0.75rem 1.75rem;
+            border-radius: 999px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .btn-primary:hover { background: var(--primary-dark); }
+
+        .disclaimer {
+            background: #e5f0ff;
+            border-left: 4px solid var(--primary);
+            padding: 1rem 1.25rem;
+            max-width: 650px;
+            margin: 2rem auto 0;
+            font-size: 0.875rem;
+            color: var(--muted);
+            border-radius: 0.5rem;
+        }
+
+        /* Section Header */
+        .section-header {
+            margin-bottom: 3rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-header p { color: var(--muted); }
+
+        /* Products */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 6px var(--shadow);
+        }
+
+        .product-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px var(--shadow);
+        }
+
+        .product-image img {
+            width: 100%;
+            max-height: 180px;
+            object-fit: contain;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-badge {
+            background: #ecfdf5;
+            color: #047857;
+            padding: 0.3rem 0.6rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        .product-title { font-weight: 600; margin-bottom: 0.25rem; font-size: 1rem; }
+        .product-brand { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+        .product-description { font-size: 0.9rem; color: var(--muted); margin-bottom: 1rem; flex: 1; }
+
+        .product-rating { font-size: 0.85rem; margin-bottom: 0.5rem; }
+        .stars { color: #f59e0b; }
+
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .price { font-weight: 700; font-size: 1rem; }
+        .note { font-size: 0.75rem; color: var(--muted); }
+
+        .btn-link {
+            background: #eff6ff;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 0.5rem;
+            border-radius: 999px;
+            text-align: center;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .btn-link:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 4rem 0;
+        }
+
+        .faq h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .faq-item {
+            margin-bottom: 2rem;
+        }
+
+        .faq-item h3 {
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 1.5rem 0;
+            font-size: 0.85rem;
+            color: var(--muted);
+            background: #fff;
+            text-align: center;
+        }
+        footer a {
+            color: var(--muted);
+            text-decoration: none;
+            margin: 0 0.25rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <nav class="nav">
+            <div class="logo">Home-Workout Guide</div>
+            <div class="nav-links">
+                <a href="#kurzhanteln">Kurzhanteln für Home-Workout</a>
+                <a href="#klimmzug">Klimmzugstangen für Zuhause</a>
+                <a href="#liegestuetz">Liegestützgriffe & Push-Up Bars</a>
+                <a href="#faq">FAQ</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>Die besten Home-Workout Empfehlungen</h1>
+            <p>Finde hochwertige Fitnessprodukte für dein Training zu Hause – handverlesen und transparent empfohlen.</p>
+
+            <button class="btn-primary" onclick="document.getElementById('kurzhanteln').scrollIntoView({behavior: 'smooth'});">
+                Zu den Empfehlungen
+            </button>
+
+            <div class="disclaimer">
+                Hinweis: Diese Seite enthält Affiliate-Links. Wenn du über diese Links einkaufst, erhalte ich eine kleine Provision – für dich entstehen keine Mehrkosten.
+            </div>
+        </div>
+    </section>
+
+    <!-- Kategorie 1: Kurzhanteln -->
+    <section class="product-section" id="kurzhanteln">
+        <div class="container">
+            <div class="section-header">
+                <h2>Kurzhanteln & Langhanteln</h2>
+                <p>Perfekt für Krafttraining zu Hause – flexibles Training für Anfänger und Fortgeschrittene</p>
+            </div>
+
+            <div class="product-grid">
+                <!-- Produkt 1 -->
+                <article class="product-card">
+                    <div class="product-badge">Preis-Leistung</div>
+                    <div class="product-image">
+                        <img loading="lazy" src="https://m.media-amazon.com/images/I/7136IT8ZZsL._AC_SL1500_.jpg" alt="CCLIFE Hantelset 20 kg für Home-Workout und Krafttraining">
+                    </div>
+                    <h3 class="product-title">CCLIFE Hantelset 20 kg – Kurzhanteln & Langhantel</h3>
+                    <div class="product-brand">CCLIFE – Home-Workout Equipment</div>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span>4,3 von 5 Sternen (11.502 Bewertungen)</span>
+                    </div>
+                    <p class="product-description">
+                        Flexibles Hantelset mit 2 Kurzhanteln und Verbindungsrohr zur Nutzung als Langhantel. Ideal für Einsteiger und Fortgeschrittene.
+                    </p>
+                    <div class="product-meta">
+                        <div class="price">33,26 €*</div>
+                        <div class="note">*UVP: 42,95 € – Preis kann variieren</div>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn-link" href="https://amzn.to/4pTObv7" target="_blank" rel="nofollow sponsored noopener">
+                            Zum Angebot
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Produkt 2 -->
+                <article class="product-card">
+                    <div class="product-badge">Top Bewertet</div>
+                    <div class="product-image">
+                        <img loading="lazy" src="https://m.media-amazon.com/images/I/81nkc75eR8L._AC_SL1500_.jpg" alt="Amazon Basics Neopren Hanteln 2er-Set 1 kg für Home-Workout">
+                    </div>
+                    <h3 class="product-title">Amazon Basics Neopren Hanteln – 2er-Set 1 kg</h3>
+                    <div class="product-brand">Amazon Basics – Home-Workout Equipment</div>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span>4,7 von 5 Sternen (25.174 Bewertungen)</span>
+                    </div>
+                    <p class="product-description">
+                        2er-Set Kurzhanteln aus Gusseisen mit Neoprenüberzug für sicheren Halt. Sechseckige Form verhindert Wegrollen. Ideal für Fitnesskurse und Home-Workouts. Gewicht aufgedruckt auf jeder Endkappe, schweißresistent.
+                    </p>
+                    <div class="product-meta">
+                        <div class="price">9,81 €*</div>
+                        <div class="note">*Preis kann variieren</div>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn-link" href="https://amzn.to/49uguub" target="_blank" rel="nofollow sponsored noopener">
+                            Zum Angebot
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Produkt 3 -->
+                <article class="product-card">
+                    <div class="product-badge">Bestseller</div>
+                    <div class="product-image">
+                        <img loading="lazy" src="https://m.media-amazon.com/images/I/91bLnzQkiWL._AC_SL1500_.jpg" alt="Yaheetech Hantelset 2er Kurzhanteln 30 kg Home-Workout">
+                    </div>
+                    <h3 class="product-title">Yaheetech Hantelset – 2er Kurzhanteln 30 kg</h3>
+                    <div class="product-brand">Yaheetech – Home-Workout & Krafttraining</div>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span>4,2 von 5 Sternen (2.388 Bewertungen)</span>
+                    </div>
+                    <p class="product-description">
+                        Verstellbares Kurzhantelset mit 2 Hanteln, 16 Hantelscheiben in 4 Gewichten, Hartplastik-ummantelt und rostfrei. Anti-Rutsch-Rändelgriffe und Sternverschlüsse für sicheres Training. Ideal für Krafttraining zu Hause.
+                    </p>
+                    <div class="product-meta">
+                        <div class="price">33,99 €*</div>
+                        <div class="note">*UVP: 38,99 € – Preis kann variieren</div>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn-link" href="https://amzn.to/4b9YUwJ" target="_blank" rel="nofollow sponsored noopener">
+                            Zum Angebot
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kategorie 2: Klimmzugstangen -->
+    <section class="product-section" id="klimmzug">
+        <div class="container">
+            <div class="section-header">
+                <h2>Klimmzugstangen</h2>
+                <p>Für Rücken-, Arm- und Core-Training – stabil & platzsparend.</p>
+            </div>
+
+            <div class="product-grid">
+                <!-- Produkt 1 -->
+                <article class="product-card">
+                    <div class="product-badge">Bestseller</div>
+                    <div class="product-image">
+                        <img loading="lazy" src="https://m.media-amazon.com/images/I/61OIhhTOueL._AC_SL1500_.jpg" alt="Sportstech Pullmate Klimmzugstange Türrahmen Home-Workout">
+                    </div>
+                    <h3 class="product-title">Sportstech Pullmate Klimmzugstange – Türrahmen</h3>
+                    <div class="product-brand">Sportstech – Fitness & Calisthenics</div>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span>4,5 von 5 Sternen (1.510 Bewertungen)</span>
+                    </div>
+                    <p class="product-description">
+                        Hochwertige Klimmzugstange zur Türrahmenmontage ohne Schrauben. Belastbar bis 200 kg, rutschfeste Griffe, mehrere Griffvarianten sowie Klimmzughilfe und Schlingentrainer für vielseitiges Training.
+                    </p>
+                    <div class="product-meta">
+                        <div class="price">42,00 €*</div>
+                        <div class="note">*UVP: 49,99 € – Preis kann variieren</div>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn-link" href="https://amzn.to/4jelUNk" target="_blank" rel="nofollow sponsored noopener">Zum Angebot</a>
+                    </div>
+                </article>
+
+                <!-- Produkt 2 -->
+                <article class="product-card">
+                    <div class="product-badge">Top Preis</div>
+                    <div class="product-image">
+                        <img loading="lazy" src="https://m.media-amazon.com/images/I/61q1QH8jyyL._AC_SL1500_.jpg" alt="Ultrasport Klimmzugstange Türreck verstellbar Home-Workout">
+                    </div>
+                    <h3 class="product-title">Ultrasport Klimmzugstange – Türreck verstellbar 66,5–93 cm</h3>
+                    <div class="product-brand">Ultrasport – Home-Workout & Calisthenics</div>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span>3,9 von 5 Sternen (12.336 Bewertungen)</span>
+                    </div>
+                    <p class="product-description">
+                        Türrahmen-Klimmzugstange ohne Bohren montierbar, rutschfeste Schaumstoffgriffe für sicheren Halt. Belastbar bis 100 kg, Teleskopsystem für verstellbare Breite, inklusive Montagematerial. Ideal für Home-Workouts und Calisthenics.
+                    </p>
+                    <div class="product-meta">
+                        <div class="price">18,99 €*</div>
+                        <div class="note">*Preis kann variieren</div>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn-link" href="https://amzn.to/3L4lQ6c" target="_blank" rel="nofollow sponsored noopener">Zum Angebot</a>
+                    </div>
+                </article>
+
+                <!-- Produkt 3 -->
+                <article class="product-card">
+                    <div class="product-badge">Top bewertet</div>
+                    <div class="product-image">
+                        <img loading="lazy" src="https://m.media-amazon.com/images/I/81NMcTj4aAL._AC_SL1500_.jpg" alt="BeMaxx Klimmzugstange Türrahmen ohne Bohren Home-Workout">
+                    </div>
+                    <h3 class="product-title">BeMaxx Klimmzugstange – Türrahmen ohne Bohren</h3>
+                    <div class="product-brand">BeMaxx – Profi Home-Fitness</div>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span>4,3 von 5 Sternen (2.455 Bewertungen)</span>
+                    </div>
+                    <p class="product-description">
+                        Extrem stabile Klimmzugstange aus massivem Stahl für den Türrahmen. Kein Bohren oder Schrauben nötig, belastbar bis 200 kg. Inklusive Trainings-eBook für effektives Calisthenics-Training zu Hause.
+                    </p>
+                    <div class="product-meta">
+                        <div class="price">34,99 €*</div>
+                        <div class="note">*UVP: 47,99 € – Preis kann variieren</div>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn-link" href="https://amzn.to/49rCNk8" target="_blank" rel="nofollow sponsored noopener">Zum Angebot</a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Kategorie 3: Liegestützgriffe -->
+    <section class="product-section" id="liegestuetz">
+        <div class="container">
+            <div class="section-header">
+                <h2>Liegestützgriffe & Push-Up Bars</h2>
+                <p>Für saubere, gelenkschonende Push-Ups – ergonomisch und rutschfest.</p>
+            </div>
+
+            <div class="product-grid">
+                <!-- Produkt 1 -->
+                <article class="product-card">
+                    <div class="product-badge">Top bewertet</div>
+                    <div class="product-image">
+                        <img loading="lazy" src="https://m.media-amazon.com/images/I/716m8pwBWgL._AC_SL1500_.jpg" alt="ALPHASKIN Premium Liegestützbrett 9 in 1 Home-Workout">
+                    </div>
+                    <h3 class="product-title">ALPHASKIN Premium Liegestützbrett – 9 in 1 Push-Up Board</h3>
+                    <div class="product-brand">ALPHASKIN – Homegym & Fitnessgeräte</div>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span>4,5 von 5 Sternen (728 Bewertungen)</span>
+                    </div>
+                    <p class="product-description">
+                        Vielseitiges Liegestützbrett mit über 9 Übungsvarianten zur gezielten Stärkung von Brust, Schultern, Rücken, Armen und Core. Ergonomisch, rutschfest und platzsparend klappbar – ideal für Home-Workouts.
+                    </p>
+                    <div class="product-meta">
+                        <div class="price">26,95 €*</div>
+                        <div class="note">*UVP: 27,95 € – Preis kann variieren</div>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn-link" href="https://amzn.to/4qi2hGc" target="_blank" rel="nofollow sponsored noopener">Zum Angebot</a>
+                    </div>
+                </article>
+
+                <!-- Produkt 2 -->
+                <article class="product-card">
+                    <div class="product-badge">Bestseller</div>
+                    <div class="product-image">
+                        <img loading="lazy" src="https://m.media-amazon.com/images/I/7132qKVyD-L._AC_SL1500_.jpg" alt="Readaeer Liegestützgriffe Push-Up Bars Home-Workout">
+                    </div>
+                    <h3 class="product-title">Readaeer Liegestützgriffe – Push-Up Bars</h3>
+                    <div class="product-brand">Readaeer – Fitness Zubehör</div>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span>4,5 von 5 Sternen (6.108 Bewertungen)</span>
+                    </div>
+                    <p class="product-description">
+                        Klassische Push-Up Bars für gelenkschonende Liegestütze. Leicht, stabil und rutschfest – ideal für Anfänger und Fortgeschrittene. Perfekt für effektives Arm-, Brust- und Trizeps-Training zu Hause.
+                    </p>
+                    <div class="product-meta">
+                        <div class="price">9,99 €*</div>
+                        <div class="note">*Preis kann variieren</div>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn-link" href="https://amzn.to/3MTCYfp" target="_blank" rel="nofollow sponsored noopener">Zum Angebot</a>
+                    </div>
+                </article>
+
+                <!-- Produkt 3 -->
+                <article class="product-card">
+                    <div class="product-badge">Amazons Tipp</div>
+                    <div class="product-image">
+                        <img loading="lazy" src="https://m.media-amazon.com/images/I/81SW5ulq+YL._AC_SL1500_.jpg" alt="BARE HANDS Liegestützgriffe Holz Parallettes Home-Workout">
+                    </div>
+                    <h3 class="product-title">BARE HANDS Liegestützgriffe – 2x Holz Parallettes</h3>
+                    <div class="product-brand">Bare Hands – Calisthenics & Home-Workout</div>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span>4,7 von 5 Sternen (531 Bewertungen)</span>
+                    </div>
+                    <p class="product-description">
+                        Gelenkschonende und rutschfeste Liegestützgriffe aus hochwertigem Buchenholz. Ideal für Handstand, Planche und Push-Ups – sowohl Indoor als auch Outdoor. Kompakt, leicht transportierbar und inklusive Klettverschlussriemen für zusätzlichen Halt.
+                    </p>
+                    <div class="product-meta">
+                        <div class="price">29,99 €*</div>
+                        <div class="note">*UVP: 44,90 € – Preis kann variieren</div>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn-link" href="https://amzn.to/49bKols" target="_blank" rel="nofollow sponsored noopener">Zum Angebot</a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2>Häufige Fragen (FAQ)</h2>
+
+            <div class="faq-item">
+                <h3>Verdienst du Geld mit den Links?</h3>
+                <p>Ja, wenn du über meine Affiliate‑Links einkaufst, erhalte ich eine kleine Provision. Für dich bleibt der Preis identisch. So kann ich die Website weiter betreiben und dir nützliche Empfehlungen geben.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Wie wählst du die Produkte aus?</h3>
+                <p>Ich empfehle nur Produkte, die ich selbst getestet habe oder von denen ich überzeugt bin. Gute Bewertungen, solide Verarbeitung und ein faires Preis-Leistungs-Verhältnis sind mir wichtig.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Brauche ich teure Geräte für ein gutes Home‑Workout?</h3>
+                <p>Nein. Schon einfache Tools wie Kurzhanteln, Widerstandsbänder oder Liegestützgriffe reichen aus, um effektiv Muskeln aufzubauen und fitter zu werden.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Wie oft sollte ich zu Hause trainieren?</h3>
+                <p>Für sichtbare Fortschritte reichen 2–4 Trainingseinheiten pro Woche. Wichtig ist, dass du regelmäßig trainierst und die Übungen sauber ausführst.</p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
 <footer>
     <div class="container">
         <p>
