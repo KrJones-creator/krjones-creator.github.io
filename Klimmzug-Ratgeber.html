@@ -155,6 +155,36 @@
         footer a:hover {
             text-decoration: underline;
         }
+        /* Sub-Navigator unter dem Header */
+        .sub-nav {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .sub-nav .container {
+            display: flex;
+            gap: 1.5rem;
+            padding: 0.6rem 1.5rem;
+            overflow-x: auto; /* scrollen, wenn zu viele Links */
+        }
+
+        .sub-nav a {
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--muted);
+            white-space: nowrap;
+        }
+
+        .sub-nav a:hover {
+            color: var(--primary);
+        }
+
+        /* Optional: aktive Seite markieren */
+        .sub-nav a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
     </style>
 </head>
 
@@ -163,11 +193,19 @@
 <header>
     <div class="container">
         <nav class="nav">
-            <a href="index.html" class="logo">Home-Workout Guide</a>
-            <a href="index.html#klimmzug">Zur Übersicht</a>
+            <a href="index.html" class="logo">Home-Workout Guide - Ratgeber</a>
         </nav>
     </div>
 </header>
+
+<nav class="sub-nav">
+    <div class="container">
+        <a href="Trainingspläne.html">Trainingspläne</a>
+        <a href="Klimmzug-Ratgeber.html" class="active">Klimmzug Ratgeber</a>
+        <a href="Hanteln-Kaufberatung.html">Hantel-Kaufberatung</a>
+        <a href="Index.html">Produktempfehlungen</a>
+    </div>
+</nav>
 
 <main>
     <div class="container">
