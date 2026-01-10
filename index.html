@@ -358,6 +358,38 @@
             .logo span { font-size: 1.1rem; }
         }
 
+        /* === Ratgeber Highlight === */
+        .nav-guide .nav-trigger {
+            display: flex;
+            flex-direction: column;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.1;
+        }
+
+        .nav-guide .nav-trigger small {
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--muted);
+        }
+
+        /* Dropdown größer & informativer */
+        .nav-guide .nav-dropdown-menu {
+            min-width: 260px;
+        }
+
+        .nav-guide .nav-dropdown-menu a {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .nav-guide .nav-dropdown-menu span {
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+
+
     </style>
 
     <!-- Google tag (gtag.js) -->
@@ -386,17 +418,29 @@
         <a href="#klimmzug">Klimmzugstangen</a>
         <a href="#liegestuetz">Liegestützgriffe</a>
 
-        <div class="nav-dropdown">
-          <span class="nav-trigger">Ratgeber ▾</span>
-          <div class="nav-dropdown-menu">
-            <a href="kurzhanteln-kaufberatung.html">Kurzhantel-Kaufberatung</a>
-            <a href="#">Klimmzug-Ratgeber</a>
-            <a href="#">Trainingspläne</a>
-          </div>
+        <div class="nav-dropdown nav-guide">
+            <span class="nav-trigger">
+                    Ratgeber
+                <small>Wissen & Tipps</small>
+            </span>
+            <div class="nav-dropdown-menu">
+              <a href="Hanteln-Kaufberatung.html">
+                    Hantel-Kaufberatung
+                  <span>Gewichte, Materialien & Sets erklärt</span>
+              </a>
+              <a href="Klimmzug-Ratgeber.html">
+                    Klimmzug-Ratgeber
+                  <span>Türrahmen, Wand & Technik</span>
+              </a>
+              <a href="Trainingspläne.html">
+                    Trainingspläne
+                  <span>Für Anfänger & Fortgeschrittene</span>
+              </a>
+            </div>
         </div>
       </div>
 
-      <a href="#kurzhanteln" class="btn-primary nav-cta">Zu den Empfehlungen</a>
+      
     </nav>
   </div>
 </header>
@@ -732,5 +776,4 @@
 
 </body>
 </html>
-
 
