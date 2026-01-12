@@ -21,6 +21,7 @@
             --muted: #6b7280;
             --card-bg: #ffffff;
             --border: #e5e7eb;
+            --shadow: rgba(0,0,0,0.05);
         }
 
         body {
@@ -31,12 +32,13 @@
             line-height: 1.7;
         }
 
+        /* === Header & Navigation === */
         header {
             background: #fff;
             border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
-            z-index: 10;
+            z-index: 1000;
         }
 
         .container {
@@ -53,18 +55,90 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
             font-weight: 700;
             font-size: 1.4rem;
             color: var(--primary);
             text-decoration: none;
         }
 
-        .nav a {
-            text-decoration: none;
+        /* Hamburger Button */
+        .nav-toggle {
+            display: block;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
             color: var(--text);
-            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-toggle:hover { color: var(--primary); }
+
+        /* Dropdown Menu */
+        .nav-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100vh;
+            background: #fff;
+            box-shadow: -6px 0 20px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            gap: 1rem;
+            transition: right 0.3s ease-in-out;
+            z-index: 2000;
+        }
+        .nav-menu.active { right: 0; }
+
+        .nav-menu .menu-heading {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text);
+            padding: 0.5rem 0;
+            cursor: default;
+            border-bottom: 1px solid var(--border);
+            margin-top: 1rem;
         }
 
+        .nav-menu .submenu {
+            display: flex;
+            flex-direction: column;
+            padding-left: 1rem;
+            margin-top: 0.25rem;
+            gap: 0.5rem;
+        }
+
+        .nav-menu .submenu a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--muted);
+            text-decoration: none;
+        }
+        .nav-menu .submenu a:hover { color: var(--primary-dark); }
+        .nav-menu .submenu a.active { color: var(--primary); font-weight: 600; }
+
+        /* Overlay hinter Menü */
+        .nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s;
+            z-index: 1500;
+        }
+        .nav-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* === Main Content === */
         main {
             padding: 3.5rem 0;
         }
@@ -118,10 +192,7 @@
             margin: 3.5rem 0;
             text-align: center;
         }
-
-        .cta-box h3 {
-            margin-top: 0;
-        }
+        .cta-box h3 { margin-top: 0; }
 
         .btn-primary {
             display: inline-block;
@@ -133,11 +204,9 @@
             font-weight: 600;
             text-decoration: none;
         }
+        .btn-primary:hover { background: var(--primary-dark); }
 
-        .btn-primary:hover {
-            background: var(--primary-dark);
-        }
-
+        /* Footer */
         footer {
             border-top: 1px solid var(--border);
             padding: 1.5rem 0;
@@ -151,61 +220,52 @@
             text-decoration: none;
             font-weight: 400;
         }
+        footer a:hover { text-decoration: underline; }
 
-        footer a:hover {
-            text-decoration: underline;
-        }
-        /* Sub-Navigator unter dem Header */
-        .sub-nav {
-            background: #fff;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .sub-nav .container {
-            display: flex;
-            gap: 1.5rem;
-            padding: 0.6rem 1.5rem;
-            overflow-x: auto; /* scrollen, wenn zu viele Links */
-        }
-
-        .sub-nav a {
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--muted);
-            white-space: nowrap;
-        }
-
-        .sub-nav a:hover {
-            color: var(--primary);
-        }
-
-        /* Optional: aktive Seite markieren */
-        .sub-nav a.active {
-            color: var(--primary);
-            font-weight: 600;
-        }
     </style>
 </head>
 
 <body>
 
-<header>
-    <div class="container">
-        <nav class="nav">
-            <a href="index.html" class="logo">Home-Workout Guide - Ratgeber</a>
-        </nav>
-    </div>
-</header>
-
-<nav class="sub-nav">
-    <div class="container">
-        <a href="Trainingspläne.html">Trainingspläne</a>
-        <a href="Klimmzug-Ratgeber.html" class="active">Klimmzug Ratgeber</a>
-        <a href="Hanteln-Kaufberatung.html">Hantel-Kaufberatung</a>
-        <a href="index.html">Produktempfehlungen</a>
-    </div>
-</nav>
+    <header>
+        <div class="container">
+          <nav class="nav">
+            <a href="index.html" class="logo">Home-Workout Guide</a>
+      
+            <!-- Hamburger Button -->
+            <button class="nav-toggle" aria-label="Menü öffnen">☰</button>
+      
+            <!-- Dropdown Menu -->
+            <div class="nav-menu">
+                <!-- Hauptwebsite -->
+                <span class="menu-heading">Hauptseite</span>
+                <div class="submenu">
+                    <a href="https://www.home-workout-guide.de" target="_blank">Zur Hauptseite</a>
+                </div>
+      
+                <!-- Produktempfehlungen -->
+                <span class="menu-heading">Produktempfehlungen</span>
+                <div class="submenu">
+                    <a href="index.html#kurzhanteln">Kurzhanteln</a>
+                    <a href="index.html#klimmzug" class="active">Klimmzugstangen</a>
+                    <a href="index.html#liegestuetz">Liegestützgriffe</a>
+                </div>
+      
+                <!-- Ratgeber -->
+                <span class="menu-heading">Ratgeber</span>
+                <div class="submenu">
+                    <a href="Hanteln-Kaufberatung.html">Hantel-Kaufberatung</a>
+                    <a href="Klimmzug-Ratgeber.html" class="active">Klimmzug-Ratgeber</a>
+                    <a href="Trainingspläne.html">Trainingspläne</a>
+                </div>
+            </div>
+          </nav>
+        </div>
+      
+        <!-- Overlay -->
+        <div class="nav-overlay"></div>
+      </header>
+      
 
 <main>
     <div class="container">
@@ -296,8 +356,22 @@
 
 <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Hamburger Toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.querySelector('.nav-menu');
+    const overlay = document.querySelector('.nav-overlay');
+
+    toggle.addEventListener('click', () => {
+        menu.classList.toggle('active');
+        overlay.classList.toggle('active');
+    });
+
+    overlay.addEventListener('click', () => {
+        menu.classList.remove('active');
+        overlay.classList.remove('active');
+    });
 </script>
 
 </body>
 </html>
-
